@@ -4,20 +4,17 @@ public class BinaryString {
      * а возвращает String с представлением этого числа в двоичном виде.
      */
     public String toBinaryString(int value) {
-        StringBuilder str;
-        str = new StringBuilder();
+        StringBuilder result;
+        result = new StringBuilder();
         {
             int test = 0;
-            if (0 == value) {
-                str.append(0);
-            }
-            while (value != 0) {
+            do {
                 test = value % 2;
-                str.append(test);
+                result.append(test);
                 value = value / 2;
-            }
+            } while (value >= 1);
         }
-        return str.reverse().toString();
+        return result.reverse().toString();
     }
 }
 
